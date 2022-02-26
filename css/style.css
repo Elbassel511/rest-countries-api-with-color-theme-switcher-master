@@ -1,0 +1,107 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+/* font-family: 'Nunito Sans', sans-serif; */
+
+:root{
+ /* Colors */
+/* (Dark Mode Elements) */
+--DarkBlue: hsl(209, 23%, 22%);
+/* Dark Mode Background */
+--VeryDarkBlue: hsl(207, 26%, 17%);
+/* Light Mode Text */
+--VeryDarkBlue: hsl(200, 15%, 8%);
+/* Light Mode Input */
+--DarkGray: hsl(0, 0%, 52%);
+/* Light Mode Background */
+--VeryLightGray: hsl(0, 0%, 98%);
+/* Dark Mode Text & Light Mode Elements */
+--White: hsl(0, 0%, 100%);
+
+--fs-home:1.4rem;
+--fs-detail :1.6rem
+}
+
+/* utlity */
+.regular{font-weight: 300;}
+.semi-bold{font-weight: 600;}
+.bold{font-weight: 800;}
+.gap-6{gap:5rem}
+
+/* Component */
+
+html{
+    font-size: 62.5%;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.home{
+    font-size: var(--fs-home)!important;
+    background-color: var(--VeryLightGray);
+}
+
+nav {
+    padding: 2.3rem 1rem;
+    background-color: var(--White);
+    margin-bottom: 2rem;
+}
+.dark-mood{
+    cursor: pointer;
+}
+
+.search-container{
+    margin: 2rem;
+    
+}
+
+
+.search-box{
+    width: min(40rem,85vw);
+    margin: 1rem 0;
+    position: relative;
+    
+}
+.search-icon {
+    position: absolute;
+    left:2.5rem;
+    top:.6rem;
+    transform: translate(-50% ,15%);
+}
+.search-box input{
+    padding: 1.2rem ;
+    padding-left: 5rem;
+    border: none;
+}
+
+.select-region__btn {
+    background-color: var(--White);
+}
+.filter-box{
+    border:none;
+    padding: 1.3rem 1rem;
+    border-radius:5px ;
+}
+.filter-box:focus-visible{
+    border: none;
+    outline: none;
+}
+.custom-select{
+    width:15rem;
+    position: relative;
+}
+.custom-select select{
+    width: 100%;
+    padding-inline-end: 1rem;
+}
+.cards-container{
+    margin-inline: 2rem;
+}
+.card{
+    width:20rem
+}
+.card-body{
+    padding: 2.5rem 2rem;
+}
+.card-title{
+    font-family: inherit;
+    font-size: inherit;
+}
