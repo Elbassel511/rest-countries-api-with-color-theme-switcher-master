@@ -9,7 +9,7 @@
 /* Dark Mode Background */
 --VeryDarkBlue: hsl(207, 26%, 17%);
 /* Light Mode Text */
---VeryDarkBlue: hsl(200, 15%, 8%);
+--VeryDarkBlueT: hsl(200, 15%, 8%);
 /* Light Mode Input */
 --DarkGray: hsl(0, 0%, 52%);
 /* Light Mode Background */
@@ -18,7 +18,11 @@
 --White: hsl(0, 0%, 100%);
 
 --fs-home:1.4rem;
---fs-detail :1.6rem
+--fs-detail :1.6rem;
+/* light mmood */
+--Elements-color:var(--White);
+--mode-bg:var(--VeryLightGray);
+--text-clr:var(--VeryDarkBlueT);
 }
 
 /* utlity */
@@ -33,15 +37,19 @@ html{
     font-size: 62.5%;
     font-family: 'Nunito Sans', sans-serif;
 }
+body{
+    color:var(--text-clr)
+}
 
 .home{
     font-size: var(--fs-home)!important;
-    background-color: var(--VeryLightGray);
+    background-color: var(--mode-bg);
 }
+
 
 nav {
     padding: 2.3rem 1rem;
-    background-color: var(--White);
+    background-color: var(--Elements-color);
     margin-bottom: 2rem;
 }
 .dark-mood{
@@ -70,10 +78,17 @@ nav {
     padding: 1.2rem ;
     padding-left: 5rem;
     border: none;
+    background-color: var(--Elements-color);
+    color: var(--text-clr);
+}
+.search-box input:focus{
+    background-color: var(--Elements-color);
+    color: var(--text-clr);
 }
 
+
 .select-region__btn {
-    background-color: var(--White);
+    background-color: var(--Elements-color);
 }
 .filter-box{
     border:none;
@@ -87,10 +102,16 @@ nav {
 .custom-select{
     width:15rem;
     position: relative;
+   
 }
 .custom-select select{
     width: 100%;
     padding-inline-end: 1rem;
+    background-color: var(--Elements-color);
+    color: var(--text-clr);
+}
+.custom-select select::after{
+    color:red;
 }
 .cards-container{
     margin-inline: 2rem;
@@ -99,6 +120,8 @@ nav {
     width:22rem;
     cursor: pointer;
     z-index: 100;
+    position: relative;
+    background-color: var(--Elements-color);
 }
 .card-body{
     padding: 2.5rem 2rem;
@@ -113,3 +136,40 @@ nav {
     height: 15rem;
     z-index: -100;
 }
+
+.card::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+/* ----------details page-------------- */
+
+.details {
+    font-size: var(--fs-detail)!important;
+    background-color: var(--mode-bg);
+}
+.bck-btn{
+    background-color: var(--Elements-color);
+    padding: .4rem 3rem;
+    margin-left: 2rem;
+    color: inherit;
+}
+.flag {
+    display: inline-block;
+    margin: auto;
+    /* width: 90%; */
+}
+.details--info,
+h2{
+    padding-left: 2rem;
+}
+.bounders-countries div{
+    display: inline-block;
+    background-color: var(--Elements-color);
+    padding-inline: 2rem;
+    padding-block: .5rem;
+    margin:1rem;
+}
+/* --------------------- */
