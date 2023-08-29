@@ -1,0 +1,66 @@
+@import "../assets/custom-variables";
+.search-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 3rem;
+  & .search-addon {
+    background-color: var(--element-bg);
+    opacity: 50%;
+    padding-left: 2rem;
+    font-size: 1.2rem;
+    border-right: none;
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  & .search-input {
+    border-left: none;
+    font-size: 1rem;
+    padding-left: 5rem;
+    padding-block: 1rem;
+    border: none;
+    color: var(--input-text-color);
+    width: 90%;
+    max-width: 30rem;
+
+    border-radius: 3px;
+
+    &:focus {
+      outline: none;
+      border: none;
+    }
+  }
+}
+
+.dropdown-menu {
+  --bs-dropdown-bg: var(--element-bg);
+  border: none;
+  width: 12rem;
+  margin-top: 3px;
+
+  & .dropdown-item {
+    cursor: pointer;
+  }
+}
+.btn {
+  width: 12rem;
+  padding: 1rem 2rem;
+  &:hover {
+    color: var(--text);
+    background-color: var(--element-bg);
+  }
+}
+
+.card {
+  cursor: pointer;
+  & .card-body {
+    padding: 2rem 1.5rem 3rem 1.5rem;
+    & .card-title {
+      font-size: 1.25rem;
+    }
+    & .detail {
+      font-size: 1rem;
+    }
+  }
+}

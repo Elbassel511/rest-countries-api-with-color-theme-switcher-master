@@ -1,0 +1,13 @@
+<nav class="navbar shadow-sm bg-element sticky-top text-body-primary">
+  <div class="container-fluid c-letter-spacing">
+    <div class="c-fs-2 fw-bold">Where in the world?</div>
+    <button type="button" class="btn c-fs-4 fw-bold" (click)="setMode()">
+      <i
+        class="bi"
+        [class.bi-moon-fill]="theme === 'dark'"
+        [class.bi-moon]="theme === 'light'"
+      ></i>
+      Dark Mode
+    </button>
+  </div>
+</nav>

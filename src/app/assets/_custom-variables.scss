@@ -1,0 +1,44 @@
+// my custom variable 
+
+
+// break point 
+$c-break-point : 600px;
+
+// colors
+// - Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)      -- dark - primary xx
+// - Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%) -- dark - bg xx
+// - Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%) -- light - text xx
+// - Dark Gray (Light Mode Input): hsl(0, 0%, 52%) -- light - input xx
+// - Very Light Gray (Light Mode Background): hsl(0, 0%, 98%) -- light - bg xx
+// - White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)  -- dark - text       -- light - primary xx
+
+// light theme:
+$c-bg-light:hsl(0, 0%, 98%);
+$c-text-light: hsl(200, 15%, 8%);
+$c-element-light:hsl(0, 0%, 100%);
+$c-input-light:hsl(0, 0%, 52%);
+
+
+// dark theme:
+$c-bg-dark:hsl(207, 26%, 17%);
+$c-text-dark: hsl(0, 0%, 100%);
+$c-element-dark:hsl(209, 23%, 22%);
+$c-input-dark:hsl(0, 0%, 100%);
+// break point
+$c-break-point: 600px;
+
+
+
+// light Mode
+$body-bg: $c-bg-light;
+$text: $c-text-light;
+$element-bg: $c-element-light;
+$input-text-color: $c-input-light;
+
+// Dake mode
+[data-bs-theme="dark"] {
+  $body-bg: $c-bg-dark;
+  $text: $c-text-dark;
+  $element-bg: $c-element-dark;
+  $input-text-color: $c-input-dark;
+}
