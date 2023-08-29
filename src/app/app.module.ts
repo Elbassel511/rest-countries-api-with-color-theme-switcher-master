@@ -14,6 +14,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CountriesService } from './countries.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgOptimizedImage } from '@angular/common';
+import { SearchBarComponent } from './home/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NgOptimizedImage } from '@angular/common';
     NotFoundComponent,
     NavbarComponent,
     CardComponent,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,

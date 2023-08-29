@@ -70,8 +70,13 @@ $font-family-base: "Nunito Sans", sans-serif;
 .c-fw-800 {
   font-weight: 800;
 }
+
+.text-color {
+  color: var(--text);
+}
 // custom classes
 
+// main styling
 .navbar {
   @include padding(0.8rem);
 
@@ -89,7 +94,8 @@ main {
 }
 
 body {
+  --bs-body-color: var(--text);
   background-color: var(--body-bg);
-  height: 100%;
+  min-height: 100vh;
   color: var(--text);
 }

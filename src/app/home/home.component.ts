@@ -10,7 +10,6 @@ import { ActivatedRoute, Route, Router, Params } from '@angular/router';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
   countries$: Observable<Country[]>;
   filteredCountries$!: Observable<Country[]>;
 
@@ -34,10 +33,6 @@ export class HomeComponent {
         })
       );
     });
-  }
-
-  setFilter(r: string) {
-    this.router.navigate([''], { queryParams: { region: r } });
   }
 
   countriesTrack(index: number, c: Country) {
