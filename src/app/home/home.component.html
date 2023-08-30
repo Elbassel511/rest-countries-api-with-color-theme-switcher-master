@@ -1,5 +1,8 @@
 <main class="home">
-  <app-search-bar (valueChange)="search($event)"></app-search-bar>
+  <app-search-bar
+    (valueChange)="search($event)"
+    [filter]="selectedFilter"
+  ></app-search-bar>
   <div>
     <div
       *ngIf="filteredCountries$ | async as countries; else noData"

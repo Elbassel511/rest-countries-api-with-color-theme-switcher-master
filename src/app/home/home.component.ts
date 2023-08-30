@@ -13,6 +13,7 @@ export class HomeComponent implements OnDestroy {
   countries$: Observable<Country[]>;
   filteredCountries$!: Observable<Country[]>;
   routeSubscription: Subscription;
+  selectedFilter: string = 'Filter by region';
 
   constructor(
     private countriesService: CountriesService,
@@ -27,7 +28,7 @@ export class HomeComponent implements OnDestroy {
         this.filteredCountries$ = this.countries$;
         return;
       }
-
+      this.selectedFilter = region;
       this.filteredCountries$ = this.countries$.pipe(
         map((countries) => {
           return countries.filter((c) => c.region === region);

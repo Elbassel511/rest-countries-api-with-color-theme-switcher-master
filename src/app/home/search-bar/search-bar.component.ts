@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SearchBarComponent {
   regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
   @Output('valueChange') valueChange = new EventEmitter<string>();
-  selectedFilter = 'Filter br region';
+  @Input('filter') selectedFilter = 'Filter br region';
 
   constructor(private router: Router) {}
   setFilter(r: string) {
