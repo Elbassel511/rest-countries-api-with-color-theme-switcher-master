@@ -1,3 +1,82 @@
-<main>
-  {{ country$ | async | json }}
+<main class="">
+  <ng-container *ngIf="country$ | async as country">
+    <div>
+      <button class="btn shadow-sm bg-element" (click)="goBack()">
+        <i class="bi bi-arrow-left pe-2"></i> Back
+      </button>
+    </div>
+    <section class="country-section row flex-row justify-content-between">
+      <div class="col-12 col-md-6 d-flex align-items-center">
+        <img [src]="country[0].flags.png" />
+      </div>
+      <div class="details col-12 col-md-5">
+        <div class="details-text">
+          <div class="title">{{ country[0].name }}</div>
+          <div class="row justify-content-between">
+            <div class="c-mb-3 col-12 col-md-6">
+              <p>
+                <span class="c-fw-500 pe-2">Native name:</span
+                >{{ country[0].nativeName }}
+              </p>
+              <p>
+                <span class="c-fw-500 pe-2">Population:</span
+                >{{ country[0].population }}
+              </p>
+              <p>
+                <span class="c-fw-500 pe-2">Region:</span
+                >{{ country[0].region }}
+              </p>
+              <p>
+                <span class="c-fw-500 pe-2">Sub Region:</span
+                >{{ country[0].subregion }}
+              </p>
+              <p>
+                <span class="c-fw-500 pe-2">Capital:</span
+                >{{ country[0].capital }}
+              </p>
+            </div>
+
+            <div class="c-mb-3 col-12 col-md-6">
+              <p>
+                <span class="c-fw-500 pe-2">Top level Domain:</span
+                >{{ country[0].topLevelDomain }}
+              </p>
+              <p>
+                <span class="c-fw-500 pe-2">currencies:</span>
+                <span *ngFor="let c of country[0].currencies; last as isLast">
+                  {{ c.name }}
+                  <ng-container *ngIf="!isLast">,</ng-container>
+                </span>
+                <!-- to be done needs a loop -->
+              </p>
+              <p>
+                <span class="c-fw-500 pe-2">Languages:</span>
+                <!-- to be done needs a loop -->
+                <span *ngFor="let l of country[0].languages; last as isLast">
+                  {{ l.name }}
+                  <ng-container *ngIf="!isLast">,</ng-container>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- borders -->
+        <div
+          class="details-border-contries c-mb-3"
+          *ngIf="bordersCountries$ | async as bordersCountries"
+        >
+          <div class="c-fw-500 mb-3">Border Countries:</div>
+          <div class="d-flex flex-row flex-wrap">
+            <div
+              [routerLink]="'/country/' + b"
+              *ngFor="let b of bordersCountries"
+              class="me-3 mt-3 bg-element px-3 py-1 shadow-sm border-country"
+            >
+              {{ b }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </ng-container>
 </main>

@@ -2,11 +2,17 @@ export interface Country {
   name: {
     common: string;
   };
+  nativeName: string;
   region: string;
+  subregion: string;
+  topLevelDomain: string;
   population: number;
   capital: string;
   flags: {
     png: string;
-    alt: string;
+    alt?: string;
   };
+  currencies: { code: string; name: string; symbol: string }[];
+  languages: { name: string; code: string }[];
+  borders: 'string'[];
 }

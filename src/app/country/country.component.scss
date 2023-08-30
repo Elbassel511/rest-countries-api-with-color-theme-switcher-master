@@ -1,0 +1,36 @@
+.btn {
+  padding: 0.4rem 2rem;
+  margin-block: 3rem;
+  border-radius: 3px;
+  &:hover {
+    background-color: var(--element-bg);
+  }
+}
+.country-section {
+  padding-inline: 1rem;
+  display: flex;
+  flex-direction: column;
+  & .details-text {
+    font-size: 1.12rem;
+    font-weight: 300;
+    @media (min-width: var(--c-break-point)) {
+      font-size: 1rem;
+    }
+  }
+  & .title {
+    font-size: 1.25rem;
+    font-weight: 800;
+
+    padding-block: 3rem 2rem;
+  }
+  & img {
+    width: 100%;
+  }
+
+  & p {
+    margin: 0;
+  }
+  & .border-country {
+    cursor: pointer;
+  }
+}
