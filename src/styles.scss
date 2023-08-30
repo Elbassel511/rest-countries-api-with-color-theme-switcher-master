@@ -33,6 +33,12 @@ $font-family-base: "Nunito Sans", sans-serif;
 // importing bootstrap icons
 @import "./node_modules/bootstrap-icons/font/bootstrap-icons";
 
+// rest css
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
 // custom utitlity
 .c-fs-2 {
   @include font-size(1.2rem);

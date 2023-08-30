@@ -36,20 +36,20 @@ export class HomeComponent {
   }
 
   countriesTrack(index: number, c: Country) {
-    return c.name.common;
+    return c.name;
   }
 
   search(value: string) {
     this.filteredCountries$ = this.countries$.pipe(
       map((countries) => {
         return countries.filter((c) =>
-          c.name.common.toLowerCase().includes(value.trim().toLowerCase())
+          c.name.toLowerCase().includes(value.trim().toLowerCase())
         );
       })
     );
   }
 
   navigateToDetials(c: Country) {
-    this.router.navigate(['country', c.name.common]);
+    this.router.navigate(['country', c.name]);
   }
 }

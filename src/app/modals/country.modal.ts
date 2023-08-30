@@ -1,7 +1,6 @@
 export interface Country {
-  name: {
-    common: string;
-  };
+  name: string;
+
   nativeName: string;
   region: string;
   subregion: string;

@@ -10,7 +10,7 @@ export class CountriesService {
   constructor(private http: HttpClient) {}
 
   getAll() {
-    return this.http.get('https://restcountries.com/v3.1/all');
+    return this.http.get('https://restcountries.com/v2/all');
   }
 
   getCountry(countryName: string): Observable<Country[]> {
