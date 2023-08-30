@@ -9,9 +9,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SearchBarComponent {
   regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
   @Output('valueChange') valueChange = new EventEmitter<string>();
+  selectedFilter = 'Filter br region';
 
   constructor(private router: Router) {}
   setFilter(r: string) {
+    this.selectedFilter = r;
     this.router.navigate([''], { queryParams: { region: r } });
   }
 
