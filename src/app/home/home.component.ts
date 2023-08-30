@@ -1,6 +1,6 @@
 import { CountriesService } from './../countries.service';
-import { Component } from '@angular/core';
-import { Observable, filter, map } from 'rxjs';
+import { Component, OnDestroy } from '@angular/core';
+import { Observable, filter, map, Subscription } from 'rxjs';
 import { Country } from '../modals/country.modal';
 import { ActivatedRoute, Route, Router, Params } from '@angular/router';
 
@@ -9,9 +9,10 @@ import { ActivatedRoute, Route, Router, Params } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
+export class HomeComponent implements OnDestroy {
   countries$: Observable<Country[]>;
   filteredCountries$!: Observable<Country[]>;
+  routeSubscription: Subscription;
 
   constructor(
     private countriesService: CountriesService,
@@ -19,7 +20,7 @@ export class HomeComponent {
     private route: ActivatedRoute
   ) {
     this.countries$ = countriesService.getAll() as Observable<any[]>;
-    this.route.queryParams.subscribe((p: Params) => {
+    this.routeSubscription = this.route.queryParams.subscribe((p: Params) => {
       let region = p['region'] || '';
 
       if (!region) {
@@ -51,5 +52,9 @@ export class HomeComponent {
 
   navigateToDetials(c: Country) {
     this.router.navigate(['country', c.name]);
+  }
+
+  ngOnDestroy() {
+    this.routeSubscription.unsubscribe();
   }
 }
