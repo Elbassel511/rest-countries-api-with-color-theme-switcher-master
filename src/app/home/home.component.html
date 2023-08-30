@@ -8,7 +8,14 @@
       *ngIf="filteredCountries$ | async as countries; else noData"
       class="row row-cols-1 row-cols-md-4 justify-content-around g-4"
     >
-      <div
+      <app-card
+        (click)="navigateToDetials(c)"
+        *ngFor="let c of countries; trackBy: countriesTrack"
+        [country]="c"
+      ></app-card>
+    </div>
+
+    <!-- <div
         class="card col p-0 bg-element border-0 shadow-sm"
         style="width: 16.5rem"
         *ngFor="let c of countries; trackBy: countriesTrack"
@@ -40,7 +47,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <ng-template #noData>
       <div class="d-flex justify-content-center">

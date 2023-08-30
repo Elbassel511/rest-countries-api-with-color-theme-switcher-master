@@ -1,0 +1,14 @@
+.card {
+  --bs-card-title-color: var(--text);
+  --bs-card-title-spacer-y: 1.5rem;
+  cursor: pointer;
+  & .card-body {
+    padding: 2rem 1.5rem 3rem 1.5rem;
+    & .card-title {
+      font-size: 1.25rem;
+    }
+    & .detail {
+      font-size: 1rem;
+    }
+  }
+}
