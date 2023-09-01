@@ -6,7 +6,7 @@
   <div>
     <div
       *ngIf="filteredCountries$ | async as countries; else noData"
-      class="row row-cols-1 row-cols-md-4 justify-content-around g-4"
+      class="row row-cols-auto justify-content-around g-4"
     >
       <app-card
         (click)="navigateToDetials(c)"
